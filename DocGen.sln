@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocGen", "DocGen\DocGen.csproj", "{BFC38E8D-F773-447C-BCC3-20F2892B8100}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DOM", "DOM\DOM.csproj", "{2F1256C7-4A1A-4CAB-9420-088A65EAB66D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E337E207-F76F-4E7E-8918-887861578783} = {E337E207-F76F-4E7E-8918-887861578783}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DOMTests", "DOMTests\DOMTests.csproj", "{E337E207-F76F-4E7E-8918-887861578783}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BFC38E8D-F773-447C-BCC3-20F2892B8100}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFC38E8D-F773-447C-BCC3-20F2892B8100}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFC38E8D-F773-447C-BCC3-20F2892B8100}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFC38E8D-F773-447C-BCC3-20F2892B8100}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F1256C7-4A1A-4CAB-9420-088A65EAB66D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F1256C7-4A1A-4CAB-9420-088A65EAB66D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F1256C7-4A1A-4CAB-9420-088A65EAB66D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F1256C7-4A1A-4CAB-9420-088A65EAB66D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E337E207-F76F-4E7E-8918-887861578783}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E337E207-F76F-4E7E-8918-887861578783}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E337E207-F76F-4E7E-8918-887861578783}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E337E207-F76F-4E7E-8918-887861578783}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
