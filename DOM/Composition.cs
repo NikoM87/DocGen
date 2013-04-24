@@ -3,9 +3,9 @@
 
 namespace DOM
 {
-    public class Composition : Glyph
+    public abstract class Composition : Glyph
     {
-        public Composition()
+        protected Composition()
         {
             ChildGlyphs = new List<Glyph>();
         }
@@ -17,15 +17,6 @@ namespace DOM
         public override void Insert( Glyph glyph )
         {
             ChildGlyphs.Add( glyph );
-        }
-
-
-        public override void Accept( Visitor visitor )
-        {
-            foreach ( Glyph glyph in ChildGlyphs )
-            {
-                glyph.Accept( visitor );
-            }
         }
     }
 }

@@ -1,16 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.Windows.Forms;
 
-using DOM;
-
-
-namespace DocGenWin
+namespace DOM
 {
     public class TreeViewVisitor : Visitor
     {
         private readonly TreeView _treeView;
         private TreeNode _root;
-        private Stack<TreeNode> _stack;
+        private readonly Stack<TreeNode> _stack;
 
 
         public TreeViewVisitor( Glyph doc, TreeView treeView )

@@ -14,7 +14,7 @@ namespace DocGenWin
         }
 
 
-        private void Form1_Load( object sender, EventArgs e )
+        private void Form1Load( object sender, EventArgs e )
         {
             var doc = new Paragraph();
             doc.Insert( new Image( @"http://upload.wikimedia.org/wikipedia/commons/6/63/Wikipedia-logo.png" ) );

@@ -11,8 +11,8 @@ namespace DOMTests
         [TestMethod]
         public void TestInsert()
         {
-            var composition = new Composition();
-            var pasted = new Composition();
+            var composition = new Paragraph();
+            var pasted = new Paragraph();
 
             composition.Insert( pasted );
 
