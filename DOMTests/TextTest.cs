@@ -1,5 +1,7 @@
 ﻿using DOM;
+
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+
 
 namespace DOMTests
 {
@@ -9,7 +11,7 @@ namespace DOMTests
         [TestMethod]
         public void TestInsert()
         {
-            Text textHello = new Text( "Hello" );
+            var textHello = new Text( "Hello" );
             Glyph textWorld = new Text( "World" );
 
             textHello.Insert( textWorld );

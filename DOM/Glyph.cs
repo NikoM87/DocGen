@@ -3,6 +3,7 @@
     public abstract class Glyph
     {
         public abstract void Insert( Glyph glyph );
-        public abstract void Accept( HtmlVisitor visitor );
+
+        public abstract void Accept( Visitor visitor );
     }
 }

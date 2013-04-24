@@ -1,30 +1,34 @@
 ﻿using System;
 
+
 namespace DOM
 {
-    public class HtmlVisitor
+    public class HtmlVisitor : Visitor
     {
-        private readonly Glyph _glyph;
-        public string OuterHtml { get; set; }
-
         public HtmlVisitor( Glyph glyph )
+            : base( glyph )
         {
-            _glyph = glyph;
         }
 
-        public void Start()
+
+        public string OuterHtml { get; set; }
+
+
+        public override void Start()
         {
             OuterHtml += "<html><body>";
-            VisitParagraph( ( _glyph as Paragraph ) );
+            Glyph.Accept( this );
             OuterHtml += "</body></html>";
         }
 
-        public void VisitText( Text text )
+
+        public override void VisitText( Text text )
         {
             OuterHtml += text.Line;
         }
 
-        public void VisitParagraph( Paragraph paragraph )
+
+        public override void VisitParagraph( Paragraph paragraph )
         {
             string param = " ";
             switch ( paragraph.Align )
@@ -35,8 +39,17 @@ namespace DOM
             }
 
             OuterHtml += String.Format( "<p{0}>", param );
-            paragraph.Accept( this );
+            foreach ( Glyph glyph in paragraph.ChildGlyphs )
+            {
+                glyph.Accept( this );
+            }
             OuterHtml += "</p>";
+        }
+
+
+        public override void VisitImage( Image image )
+        {
+            OuterHtml += String.Format( "<img src=\"{0}\"/>", image.Url );
         }
     }
 }

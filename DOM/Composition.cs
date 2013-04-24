@@ -1,25 +1,28 @@
 ﻿using System.Collections.Generic;
 
+
 namespace DOM
 {
-    public class Composition: Glyph
+    public class Composition : Glyph
     {
         public Composition()
         {
-            Glyphs = new List<Glyph>();
+            ChildGlyphs = new List<Glyph>();
         }
 
-        public List<Glyph> Glyphs { get; set; }
-       
-        
+
+        public List<Glyph> ChildGlyphs { get; set; }
+
+
         public override void Insert( Glyph glyph )
         {
-            Glyphs.Add( glyph );
+            ChildGlyphs.Add( glyph );
         }
 
-        public override void Accept( HtmlVisitor visitor )
+
+        public override void Accept( Visitor visitor )
         {
-            foreach ( Glyph glyph in Glyphs )
+            foreach ( Glyph glyph in ChildGlyphs )
             {
                 glyph.Accept( visitor );
             }

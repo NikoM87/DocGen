@@ -1,5 +1,7 @@
 ﻿using DOM;
+
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+
 
 namespace DOMTests
 {
@@ -9,13 +11,13 @@ namespace DOMTests
         [TestMethod]
         public void TestInsert()
         {
-            Composition composition = new Composition();
-            Composition pasted = new Composition();
+            var composition = new Composition();
+            var pasted = new Composition();
 
             composition.Insert( pasted );
 
-            Assert.AreEqual( 1, composition.Glyphs.Count );
-            Assert.AreEqual( pasted, composition.Glyphs[0] );
+            Assert.AreEqual( 1, composition.ChildGlyphs.Count );
+            Assert.AreEqual( pasted, composition.ChildGlyphs[0] );
         }
     }
 }
