@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Windows.Forms;
 
+
 namespace DOM
 {
     public class TreeViewVisitor : Visitor
@@ -20,7 +21,7 @@ namespace DOM
 
         public override void Start()
         {
-            var node = new TreeNode( Glyph.ToString() );
+            var node = new TreeNode( "root" );
             _treeView.Nodes.Add( node );
             _stack.Push( node );
             Glyph.Accept( this );
@@ -52,6 +53,20 @@ namespace DOM
         {
             _root = _stack.Pop();
             _root.Nodes.Add( new TreeNode( image.ToString() ) );
+        }
+
+
+        public override void VisitDocument( Document document )
+        {
+            var node = new TreeNode( document.ToString() );
+            _root = _stack.Pop();
+            
+            _root.Nodes.Add( node );
+            foreach ( Glyph glyph in document.ChildGlyphs )
+            {
+                _stack.Push( node );
+                glyph.Accept( this );
+            }
         }
     }
 }

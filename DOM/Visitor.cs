@@ -17,7 +17,8 @@
 
         public abstract void VisitParagraph( Paragraph paragraph );
 
-
         public abstract void VisitImage( Image image );
+
+        public abstract void VisitDocument( Document document );
     }
 }

@@ -16,9 +16,7 @@ namespace DOM
 
         public override void Start()
         {
-            OuterHtml += "<html><body>";
             Glyph.Accept( this );
-            OuterHtml += "</body></html>";
         }
 
 
@@ -50,6 +48,17 @@ namespace DOM
         public override void VisitImage( Image image )
         {
             OuterHtml += String.Format( "<img src=\"{0}\"/>", image.Url );
+        }
+
+
+        public override void VisitDocument( Document document )
+        {
+            OuterHtml += "<html><body>";
+            foreach ( Glyph glyph in document.ChildGlyphs )
+            {
+                glyph.Accept( this );
+            }
+            OuterHtml += "</body></html>";
         }
     }
 }

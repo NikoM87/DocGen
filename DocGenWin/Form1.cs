@@ -16,7 +16,7 @@ namespace DocGenWin
 
         private void Form1Load( object sender, EventArgs e )
         {
-            var doc = new Paragraph();
+            var doc = new Document();
             doc.Insert( new Image( @"http://upload.wikimedia.org/wikipedia/commons/6/63/Wikipedia-logo.png" ) );
             doc.Insert( new Text( "Hello" ) );
             doc.Insert( new Text( " world" ) );
