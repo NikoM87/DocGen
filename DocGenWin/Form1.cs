@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections;
 using System.Windows.Forms;
+using System.Xml;
 
 using DOM;
 
@@ -29,6 +31,29 @@ namespace DocGenWin
 
             webBrowser1.DocumentText = htmlVisitor.OuterHtml;
             richTextBox1.Text = htmlVisitor.OuterHtml;
+        }
+
+
+        private void Button1Click( object sender, EventArgs e )
+        {
+            var xml = new XmlDocument();
+            xml.LoadXml( richTextBox1.Text );
+
+            TreeNode root = treeView2.Nodes.Add( xml.ToString() );
+
+            PrintXmlNode( root, xml.ChildNodes );
+        }
+
+
+        void PrintXmlNode( TreeNode root, IEnumerable nodes )
+        {
+            foreach ( XmlNode node in nodes )
+            {
+                var r = new TreeNode( node.Name );
+                root.Nodes.Add( r );
+
+                PrintXmlNode(r, node.ChildNodes );
+            }
         }
     }
 }

@@ -31,6 +31,8 @@
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.treeView1 = new System.Windows.Forms.TreeView();
+            this.button1 = new System.Windows.Forms.Button();
+            this.treeView2 = new System.Windows.Forms.TreeView();
             this.SuspendLayout();
             // 
             // webBrowser1
@@ -45,7 +47,7 @@
             // 
             this.richTextBox1.Location = new System.Drawing.Point(12, 299);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(520, 138);
+            this.richTextBox1.Size = new System.Drawing.Size(495, 138);
             this.richTextBox1.TabIndex = 1;
             this.richTextBox1.Text = "";
             // 
@@ -53,14 +55,33 @@
             // 
             this.treeView1.Location = new System.Drawing.Point(538, 12);
             this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(193, 425);
+            this.treeView1.Size = new System.Drawing.Size(193, 281);
             this.treeView1.TabIndex = 2;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(513, 300);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(19, 137);
+            this.button1.TabIndex = 3;
+            this.button1.Text = ">";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1Click);
+            // 
+            // treeView2
+            // 
+            this.treeView2.Location = new System.Drawing.Point(538, 300);
+            this.treeView2.Name = "treeView2";
+            this.treeView2.Size = new System.Drawing.Size(193, 137);
+            this.treeView2.TabIndex = 4;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(743, 449);
+            this.Controls.Add(this.treeView2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.treeView1);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.webBrowser1);
@@ -76,6 +97,8 @@
         private System.Windows.Forms.WebBrowser webBrowser1;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.TreeView treeView1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TreeView treeView2;
     }
 }
 
